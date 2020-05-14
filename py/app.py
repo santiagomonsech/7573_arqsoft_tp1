@@ -13,6 +13,3 @@ def ping():
 def timeout():
   time.sleep(TIMEOUT)
   return "python - timeout"
-
-if (__name__ == "__main__"):
-  app.run()
