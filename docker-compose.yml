@@ -3,12 +3,8 @@ version: '2'
 services:
     node:
         build: ./js
-        expose:
-            - "3000"
     gunicorn:
         build: ./py
-        ports:
-            - "6379:6379"
     nginx:
         image: nginx:1.17.8
         ports:
