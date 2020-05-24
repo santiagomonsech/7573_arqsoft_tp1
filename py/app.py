@@ -1,5 +1,5 @@
 import time
-
+from datetime import datetime
 from flask import Flask
 
 TIMEOUT = 5
@@ -13,3 +13,12 @@ def ping():
 def timeout():
   time.sleep(TIMEOUT)
   return "python - timeout"
+
+@app.route("/heavy")
+def heavy():
+	start = datetime.now()
+	while True:
+		now = datetime.now()
+		if (now - start).seconds >= TIMEOUT:
+			break
+	return "python - heavy"
