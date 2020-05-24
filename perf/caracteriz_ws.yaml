@@ -1,0 +1,79 @@
+config:
+  environments:
+    n9090:
+      target: 'http://localhost:9090'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-n9090"
+    n9091:
+      target: 'http://localhost:9091'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-n9091"
+
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    - 
+      name: Ramp up - única
+      duration: 300
+      arrivalRate: 5
+      rampTo: 200
+    -
+      name: Ramp down - inico
+      arrivalRate: 28
+      duration: 1.96
+    -
+      arrivalRate: 26
+      duration: 1.96
+    -
+      arrivalRate: 24
+      duration: 1.96
+    -
+      arrivalRate: 22
+      duration: 1.96
+    -
+      arrivalRate: 20
+      duration: 1.96
+    -
+      arrivalRate: 18
+      duration: 1.96
+    -
+      arrivalRate: 16
+      duration: 1.96
+    -
+      arrivalRate: 14
+      duration: 1.96
+    -
+      arrivalRate: 12
+      duration: 1.96
+    -
+      arrivalRate: 10
+      duration: 1.96
+    -
+      arrivalRate: 8
+      duration: 1.96
+    -
+      arrivalRate: 6
+      duration: 1.96
+    -
+      arrivalRate: 4
+      duration: 1.96
+    -
+      arrivalRate: 2
+      duration: 1.96
+    -
+      arrivalRate: 0.1
+      duration: 30
+
+
+scenarios:
+  - name: Root (/)
+    flow:
+      - get:
+          url: '/'
