@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 6,
-  "iteration": 1590365537721,
+  "id": 5,
+  "iteration": 1590443417898,
   "links": [],
   "panels": [
     {
@@ -532,9 +532,109 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 11,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(removeBelowValue(asPercent(derivative(keepLastValue(stats.gauges.cadvisor.7573_arqsoft_tp1_node_1.cpu_cumulative_usage, 100)), 10000000000), 0.0001), 'CPU_1')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(removeBelowValue(asPercent(derivative(keepLastValue(stats.gauges.cadvisor.7573_arqsoft_tp1_node_2.cpu_cumulative_usage, 100)), 10000000000), 0.0001), 'CPU_2')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(removeBelowValue(asPercent(derivative(keepLastValue(stats.gauges.cadvisor.7573_arqsoft_tp1_node_3.cpu_cumulative_usage, 100)), 10000000000), 0.0001), 'CPU_3')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Node Replicated",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 19,
   "style": "dark",
   "tags": [],
@@ -544,8 +644,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "artillery-n9091",
-          "value": "artillery-n9091"
+          "text": "artillery-node",
+          "value": "artillery-node"
         },
         "hide": 0,
         "includeAll": false,
@@ -554,7 +654,7 @@
         "name": "server",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "artillery-node",
             "value": "artillery-node"
           },
@@ -574,7 +674,7 @@
             "value": "artillery-n9090"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "artillery-n9091",
             "value": "artillery-n9091"
           }
@@ -587,8 +687,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "7573_arqsoft_tp1_arqsoft_1",
-          "value": "7573_arqsoft_tp1_arqsoft_1"
+          "text": "7573_arqsoft_tp1_node_1",
+          "value": "7573_arqsoft_tp1_node_1"
         },
         "hide": 0,
         "includeAll": false,
@@ -597,7 +697,7 @@
         "name": "container",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "7573_arqsoft_tp1_node_1",
             "value": "7573_arqsoft_tp1_node_1"
           },
@@ -637,7 +737,7 @@
             "value": "7573_arqsoft_tp1_nginx_1"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "7573_arqsoft_tp1_arqsoft_1",
             "value": "7573_arqsoft_tp1_arqsoft_1"
           }
@@ -649,8 +749,8 @@
     ]
   },
   "time": {
-    "from": "2020-05-25T04:20:50.082Z",
-    "to": "2020-05-25T04:27:07.643Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -680,5 +780,5 @@
   "timezone": "",
   "title": "Final",
   "uid": "final",
-  "version": 1
+  "version": 3
 }
