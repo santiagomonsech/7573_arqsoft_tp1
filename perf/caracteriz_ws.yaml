@@ -21,9 +21,9 @@ config:
   phases:
     - 
       name: Ramp up - única
-      duration: 300
+      duration: 600
       arrivalRate: 5
-      rampTo: 200
+      rampTo: 150
     -
       name: Ramp down - inico
       arrivalRate: 28
