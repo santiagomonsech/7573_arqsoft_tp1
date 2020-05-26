@@ -1,0 +1,264 @@
+config:
+  ensure:
+    maxErrorRate: 0.1
+
+  environments:
+    node:
+      target: 'http://localhost:5555/node'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node"
+    gunicorn:
+      target: 'http://localhost:5555/gunicorn'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-gunicorn"
+    node_replicated:
+      target: 'http://localhost:5555/node_replicated'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node_replicated"
+
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    # - name: Ph0.1   
+    #   duration: 10
+    #   arrivalRate: 0.1
+    # - name: Ph0.2
+    #   duration: 10
+    #   arrivalRate: 0.2
+    # - name: Ph0.3
+    #   duration: 10
+    #   arrivalRate: 0.3
+    # - pause: 5
+    # - name: Ph0.4
+    #   duration: 10
+    #   arrivalRate: 0.4
+    # - pause: 10
+    # - name: Ph0.6
+    #   duration: 10
+    #   arrivalRate: 0.6
+    # - pause: 20
+    # - name: Ph0.8
+    #   duration: 10
+    #   arrivalRate: 0.8
+    # - pause: 30
+    # - name: Ph1
+    #   duration: 10
+    #   arrivalRate: 1
+    # - pause: 40
+    # - name: Ph1.5
+    #   duration: 10
+    #   arrivalRate: 1.5
+    # - pause: 65
+    # - name: Ph2
+    #   duration: 10
+    #   arrivalRate: 2
+    # - pause: 90
+    # - name: Ph2.5
+    #   duration: 10
+    #   arrivalRate: 2.5
+    # - pause: 115
+    # - name: Ph3
+    #   duration: 10
+    #   arrivalRate: 3
+    # - pause: 140
+    # - name: Ph3.5
+    #   duration: 10
+    #   arrivalRate: 3.5
+    # - pause: 165
+    # - name: Ph4
+    #   duration: 10
+    #   arrivalRate: 4
+    # - pause: 190
+    # - name: Ph4.5
+    #   duration: 10
+    #   arrivalRate: 4.5
+    # - pause: 215
+    # - name: Ph5
+    #   duration: 10
+    #   arrivalRate: 5
+    # - pause: 240
+    # - name: Ph5.5
+    #   duration: 10
+    #   arrivalRate: 5.5
+    # - pause: 265
+    # - name: Ph6
+    #   duration: 10
+    #   arrivalRate: 6
+    # - pause: 290
+    # - name: Ph6.5
+    #   duration: 10
+    #   arrivalRate: 6.5
+    # - pause: 315
+    # - name: Ph7   duration: 10   arrivalRate: 7- pause: 340
+    # - name: Ph8   duration: 10   arrivalRate: 8- pause: 390
+    # - name: Ph9   duration: 10   arrivalRate: 9- pause: 440
+    # - name: Ph10   duration: 10   arrivalRate: 10- pause: 490
+    # - name: Ph11   duration: 10   arrivalRate: 11- pause: 540
+    # - name: Ph12   duration: 10   arrivalRate: 12- pause: 590
+    # - name: Ph13   duration: 10   arrivalRate: 13- pause: 640
+    # - name: Ph14   duration: 10   arrivalRate: 14- pause: 690
+    # - name: Ph15   duration: 10   arrivalRate: 15- pause: 740
+    # - name: Ph16   duration: 10   arrivalRate: 16- pause: 790
+    # - name: Ph18   duration: 10   arrivalRate: 18- pause: 890
+    # - name: Ph20   duration: 10   arrivalRate: 20- pause: 990
+    # - name: Ph22   duration: 10   arrivalRate: 22- pause: 1090
+    # - name: Ph24   duration: 10   arrivalRate: 24- pause: 1190
+    # - name: Ph26   duration: 10   arrivalRate: 26- pause: 1290
+    # - name: Ph28   duration: 10   arrivalRate: 28- pause: 1390
+    # - name: Ph30   duration: 10   arrivalRate: 30- pause: 1490
+    - name: Ph0.1
+      duration: 10
+      arrivalRate: 0.1
+    - pause: 10
+    - name: Ph0.2
+      duration: 10 
+      arrivalRate: 0.2
+    - pause: 10
+    - name: Ph0.3   
+      duration: 10   
+      arrivalRate: 0.3
+    - pause: 10
+    - name: Ph0.4
+      duration: 10   
+      arrivalRate: 0.4
+    - pause: 15
+    - name: Ph0.6   
+      duration: 10   
+      arrivalRate: 0.6
+    - pause: 25
+    - name: Ph0.8
+      duration: 10
+      arrivalRate: 0.8
+    - pause: 35
+    - name: Ph1
+      duration: 10
+      arrivalRate: 1
+    - pause: 45
+    - name: Ph1.5
+      duration: 10
+      arrivalRate: 1.5
+    - pause: 70
+    - name: Ph2   
+      duration: 10   
+      arrivalRate: 2
+    - pause: 95
+    - name: Ph2.5   
+      duration: 10   
+      arrivalRate: 2.5
+    - pause: 120
+    - name: Ph3   
+      duration: 10   
+      arrivalRate: 3
+    - pause: 145
+    - name: Ph3.5   
+      duration: 10   
+      arrivalRate: 3.5
+    - pause: 170
+    - name: Ph4   
+      duration: 10   
+      arrivalRate: 4
+    - pause: 195
+    - name: Ph4.5   
+      duration: 10   
+      arrivalRate: 4.5
+    - pause: 220
+    - name: Ph5   
+      duration: 10   
+      arrivalRate: 5
+    - pause: 245
+    - name: Ph5.5   
+      duration: 10   
+      arrivalRate: 5.5
+    - pause: 270
+    - name: Ph6   
+      duration: 10   
+      arrivalRate: 6
+    - pause: 295
+    - name: Ph6.5   
+      duration: 10   
+      arrivalRate: 6.5
+    - pause: 320
+    - name: Ph7   
+      duration: 10   
+      arrivalRate: 7
+    - pause: 345
+    - name: Ph8   
+      duration: 10   
+      arrivalRate: 8
+    - pause: 395
+    - name: Ph9   
+      duration: 10   
+      arrivalRate: 9
+    - pause: 445
+    - name: Ph10   
+      duration: 10   
+      arrivalRate: 10
+    - pause: 495
+    - name: Ph11   
+      duration: 10   
+      arrivalRate: 11
+    - pause: 545
+    - name: Ph12   
+      duration: 10   
+      arrivalRate: 12
+    - pause: 595
+    - name: Ph13   
+      duration: 10   
+      arrivalRate: 13
+    - pause: 645
+    - name: Ph14   
+      duration: 10   
+      arrivalRate: 14
+    - pause: 695
+    - name: Ph15   
+      duration: 10   
+      arrivalRate: 15
+    - pause: 745
+    - name: Ph16   
+      duration: 10   
+      arrivalRate: 16
+    - pause: 795
+    - name: Ph18   
+      duration: 10   
+      arrivalRate: 18
+    - pause: 895
+    - name: Ph20   
+      duration: 10   
+      arrivalRate: 20
+    - pause: 995
+    - name: Ph22   
+      duration: 10   
+      arrivalRate: 22
+    - pause: 1095
+    - name: Ph24   
+      duration: 10   
+      arrivalRate: 24
+    - pause: 1195
+    - name: Ph26   
+      duration: 10   
+      arrivalRate: 26
+    - pause: 1295
+    - name: Ph28   
+      duration: 10   
+      arrivalRate: 28
+    - pause: 1395
+    - name: Ph30   
+      duration: 10   
+      arrivalRate: 30
+    - pause: 1495
+
+scenarios:
+  - name: Heavy
+    flow:
+      - get:
+          url: '/heavy'
