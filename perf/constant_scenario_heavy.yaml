@@ -28,16 +28,16 @@ config:
   phases:
     -
       name: Ramp - warm up
-      duration: 30
+      duration: 50
       arrivalRate: 0.1
-      rampTo: 0.2
+      rampTo: 0.3
     -
       name: Plain - cantidad fija requests
-      duration: 90
-      arrivalRate: 0.2
+      duration: 150
+      arrivalRate: 0.3
     -
       arrivalRate: 0
-      duration: 5
+      duration: 10
 
 
 scenarios:
