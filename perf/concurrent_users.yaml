@@ -258,7 +258,7 @@ config:
     - pause: 1495
 
 scenarios:
-  - name: Heavy
+  - name: Timeout
     flow:
       - get:
-          url: '/heavy'
+          url: '/timeout'
