@@ -1,0 +1,433 @@
+config:
+  ensure:
+    maxErrorRate: 0.1
+
+  environments:
+    node:
+      target: 'http://localhost:5555/node'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node"
+    gunicorn:
+      target: 'http://localhost:5555/gunicorn'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-gunicorn"
+    node_replicated:
+      target: 'http://localhost:5555/node_replicated'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node_replicated"
+
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    - name: Ph1
+      duration: 10
+      arrivalRate: 1
+    - pause: 50
+    - name: Ph2
+      duration: 10
+      arrivalRate: 2
+    - pause: 50
+    - name: Ph3
+      duration: 10
+      arrivalRate: 3
+    - pause: 50
+    - name: Ph4
+      duration: 10
+      arrivalRate: 4
+    - pause: 50
+    - name: Ph5
+      duration: 10
+      arrivalRate: 5
+    - pause: 50
+    - name: Ph6
+      duration: 10
+      arrivalRate: 6
+    - pause: 50
+    - name: Ph7
+      duration: 10
+      arrivalRate: 7
+    - pause: 50
+    - name: Ph8
+      duration: 10
+      arrivalRate: 8
+    - pause: 50
+    - name: Ph9
+      duration: 10
+      arrivalRate: 9
+    - pause: 50
+    - name: Ph10
+      duration: 10
+      arrivalRate: 10
+    - pause: 50
+    - name: Ph11
+      duration: 10
+      arrivalRate: 11
+    - pause: 50
+    - name: Ph12
+      duration: 10
+      arrivalRate: 12
+    - pause: 50
+    - name: Ph13
+      duration: 10
+      arrivalRate: 13
+    - pause: 50
+    - name: Ph14
+      duration: 10
+      arrivalRate: 14
+    - pause: 50
+    - name: Ph15
+      duration: 10
+      arrivalRate: 15
+    - pause: 50
+    - name: Ph16
+      duration: 10
+      arrivalRate: 16
+    - pause: 50
+    - name: Ph17
+      duration: 10
+      arrivalRate: 17
+    - pause: 50
+    - name: Ph18
+      duration: 10
+      arrivalRate: 18
+    - pause: 50
+    - name: Ph19
+      duration: 10
+      arrivalRate: 19
+    - pause: 50
+    - name: Ph20
+      duration: 10
+      arrivalRate: 20
+    - pause: 50
+    - name: Ph21
+      duration: 10
+      arrivalRate: 21
+    - pause: 50
+    - name: Ph22
+      duration: 10
+      arrivalRate: 22
+    - pause: 50
+    - name: Ph23
+      duration: 10
+      arrivalRate: 23
+    - pause: 50
+    - name: Ph24
+      duration: 10
+      arrivalRate: 24
+    - pause: 50
+    - name: Ph25
+      duration: 10
+      arrivalRate: 25
+    - pause: 50
+    - name: Ph26
+      duration: 10
+      arrivalRate: 26
+    - pause: 50
+    - name: Ph27
+      duration: 10
+      arrivalRate: 27
+    - pause: 50
+    - name: Ph28
+      duration: 10
+      arrivalRate: 28
+    - pause: 50
+    - name: Ph29
+      duration: 10
+      arrivalRate: 29
+    - pause: 50
+    - name: Ph30
+      duration: 10
+      arrivalRate: 30
+    - pause: 50
+    - name: Ph31
+      duration: 10
+      arrivalRate: 31
+    - pause: 50
+    - name: Ph32
+      duration: 10
+      arrivalRate: 32
+    - pause: 50
+    - name: Ph33
+      duration: 10
+      arrivalRate: 33
+    - pause: 50
+    - name: Ph34
+      duration: 10
+      arrivalRate: 34
+    - pause: 50
+    - name: Ph35
+      duration: 10
+      arrivalRate: 35
+    - pause: 50
+    - name: Ph36
+      duration: 10
+      arrivalRate: 36
+    - pause: 50
+    - name: Ph37
+      duration: 10
+      arrivalRate: 37
+    - pause: 50
+    - name: Ph38
+      duration: 10
+      arrivalRate: 38
+    - pause: 50
+    - name: Ph39
+      duration: 10
+      arrivalRate: 39
+    - pause: 50
+    - name: Ph40
+      duration: 10
+      arrivalRate: 40
+    - pause: 50
+    - name: Ph41
+      duration: 10
+      arrivalRate: 41
+    - pause: 50
+    - name: Ph42
+      duration: 10
+      arrivalRate: 42
+    - pause: 50
+    - name: Ph43
+      duration: 10
+      arrivalRate: 43
+    - pause: 50
+    - name: Ph44
+      duration: 10
+      arrivalRate: 44
+    - pause: 50
+    - name: Ph45
+      duration: 10
+      arrivalRate: 45
+    - pause: 50
+    - name: Ph46
+      duration: 10
+      arrivalRate: 46
+    - pause: 50
+    - name: Ph47
+      duration: 10
+      arrivalRate: 47
+    - pause: 50
+    - name: Ph48
+      duration: 10
+      arrivalRate: 48
+    - pause: 50
+    - name: Ph49
+      duration: 10
+      arrivalRate: 49
+    - pause: 50
+    - name: Ph50
+      duration: 10
+      arrivalRate: 50
+    - pause: 50
+    - name: Ph51
+      duration: 10
+      arrivalRate: 51
+    - pause: 50
+    - name: Ph52
+      duration: 10
+      arrivalRate: 52
+    - pause: 50
+    - name: Ph53
+      duration: 10
+      arrivalRate: 53
+    - pause: 50
+    - name: Ph54
+      duration: 10
+      arrivalRate: 54
+    - pause: 50
+    - name: Ph55
+      duration: 10
+      arrivalRate: 55
+    - pause: 50
+    - name: Ph56
+      duration: 10
+      arrivalRate: 56
+    - pause: 50
+    - name: Ph57
+      duration: 10
+      arrivalRate: 57
+    - pause: 50
+    - name: Ph58
+      duration: 10
+      arrivalRate: 58
+    - pause: 50
+    - name: Ph59
+      duration: 10
+      arrivalRate: 59
+    - pause: 50
+    - name: Ph60
+      duration: 10
+      arrivalRate: 60
+    - pause: 50
+    - name: Ph61
+      duration: 10
+      arrivalRate: 61
+    - pause: 50
+    - name: Ph62
+      duration: 10
+      arrivalRate: 62
+    - pause: 50
+    - name: Ph63
+      duration: 10
+      arrivalRate: 63
+    - pause: 50
+    - name: Ph64
+      duration: 10
+      arrivalRate: 64
+    - pause: 50
+    - name: Ph65
+      duration: 10
+      arrivalRate: 65
+    - pause: 50
+    - name: Ph66
+      duration: 10
+      arrivalRate: 66
+    - pause: 50
+    - name: Ph67
+      duration: 10
+      arrivalRate: 67
+    - pause: 50
+    - name: Ph68
+      duration: 10
+      arrivalRate: 68
+    - pause: 50
+    - name: Ph69
+      duration: 10
+      arrivalRate: 69
+    - pause: 50
+    - name: Ph70
+      duration: 10
+      arrivalRate: 70
+    - pause: 50
+    - name: Ph71
+      duration: 10
+      arrivalRate: 71
+    - pause: 50
+    - name: Ph72
+      duration: 10
+      arrivalRate: 72
+    - pause: 50
+    - name: Ph73
+      duration: 10
+      arrivalRate: 73
+    - pause: 50
+    - name: Ph74
+      duration: 10
+      arrivalRate: 74
+    - pause: 50
+    - name: Ph75
+      duration: 10
+      arrivalRate: 75
+    - pause: 50
+    - name: Ph76
+      duration: 10
+      arrivalRate: 76
+    - pause: 50
+    - name: Ph77
+      duration: 10
+      arrivalRate: 77
+    - pause: 50
+    - name: Ph78
+      duration: 10
+      arrivalRate: 78
+    - pause: 50
+    - name: Ph79
+      duration: 10
+      arrivalRate: 79
+    - pause: 50
+    - name: Ph80
+      duration: 10
+      arrivalRate: 80
+    - pause: 50
+    - name: Ph81
+      duration: 10
+      arrivalRate: 81
+    - pause: 50
+    - name: Ph82
+      duration: 10
+      arrivalRate: 82
+    - pause: 50
+    - name: Ph83
+      duration: 10
+      arrivalRate: 83
+    - pause: 50
+    - name: Ph84
+      duration: 10
+      arrivalRate: 84
+    - pause: 50
+    - name: Ph85
+      duration: 10
+      arrivalRate: 85
+    - pause: 50
+    - name: Ph86
+      duration: 10
+      arrivalRate: 86
+    - pause: 50
+    - name: Ph87
+      duration: 10
+      arrivalRate: 87
+    - pause: 50
+    - name: Ph88
+      duration: 10
+      arrivalRate: 88
+    - pause: 50
+    - name: Ph89
+      duration: 10
+      arrivalRate: 89
+    - pause: 50
+    - name: Ph90
+      duration: 10
+      arrivalRate: 90
+    - pause: 50
+    - name: Ph91
+      duration: 10
+      arrivalRate: 91
+    - pause: 50
+    - name: Ph92
+      duration: 10
+      arrivalRate: 92
+    - pause: 50
+    - name: Ph93
+      duration: 10
+      arrivalRate: 93
+    - pause: 50
+    - name: Ph94
+      duration: 10
+      arrivalRate: 94
+    - pause: 50
+    - name: Ph95
+      duration: 10
+      arrivalRate: 95
+    - pause: 50
+    - name: Ph96
+      duration: 10
+      arrivalRate: 96
+    - pause: 50
+    - name: Ph97
+      duration: 10
+      arrivalRate: 97
+    - pause: 50
+    - name: Ph98
+      duration: 10
+      arrivalRate: 98
+    - pause: 50
+    - name: Ph99
+      duration: 10
+      arrivalRate: 99
+    - pause: 50
+
+scenarios:
+  - name: Timeout
+    flow:
+      - get:
+          url: '/timeout'
